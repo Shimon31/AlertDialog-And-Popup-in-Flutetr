@@ -23,7 +23,34 @@ class Popupdemo extends StatelessWidget {
   }
 
 
-  void ShowSimpleDialog(BuildContext context) {}
+  void ShowSimpleDialog(BuildContext context) {
+
+   showDialog(
+       context: context, 
+       builder: (BuildContext context){
+         return SimpleDialog(
+           title: Text("Show Simple Dialog"),
+           children: [
+             SimpleDialogOption(
+               onPressed: ()=>Navigator.pop(context,"Option A"),
+               child: Text("Option A"),
+             ),
+             
+             SimpleDialogOption(
+               onPressed: ()=>Navigator.pop(context,"Option B"),
+               child: Text("Option B"),
+             ),
+             SimpleDialogOption(
+               onPressed: ()=>Navigator.pop(context,"Option C"),
+               child: Text("Option C"),
+             ),
+           ],
+           
+         );
+       });
+        
+
+  }
 
 
 //Snack bar
@@ -37,7 +64,23 @@ class Popupdemo extends StatelessWidget {
 
 
 
-  void ShowBottomSheet(BuildContext context) {}
+  void ShowBottomSheet(BuildContext context) {
+
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context){
+          return Container(
+           padding: EdgeInsets.all(10),
+           height: 500,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+               Container(height: 50,color: Colors.red,)
+              ],
+            ),
+          );
+        });
+  }
 
   const Popupdemo({super.key});
 
