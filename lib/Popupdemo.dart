@@ -31,7 +31,7 @@ class Popupdemo extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(
 
         SnackBar(content: Text("Clicked Successfully"),
-            duration: Duration(seconds: 2) ,)
+            duration: Duration(seconds: 1) ,)
     );
   }
 
